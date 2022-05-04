@@ -1,11 +1,13 @@
-import Owen from "../images/Owen.png";
-function MovieSceneItem() {
+function MovieSceneItem(props) {
   return (
-    <li>
-      <img src={Owen} alt='' />
-      <h3>Name - Year</h3>
-      <p>sentence</p>
-    </li>
+    <>
+      <img src={props.movie.image} alt='' />
+      <h3>
+        {props.movie.name} - {props.movie.year}
+      </h3>
+      <p>{props.movie.sentence}</p>
+    </>
   );
 }
+
 export default MovieSceneItem;

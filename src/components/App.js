@@ -5,13 +5,17 @@ import getDataApi from "../services/fetch";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [MoviesList, setMoviesList] = useState([]);
+  const [moviesList, setMoviesList] = useState([]);
+
   useEffect(() => {
-    getDataApi().then((dataApi) => {
-      setMoviesList(dataApi);
-    });
+    if (moviesList.length === 0) {
+      getDataApi().then((dataFromApi) => {
+        setMoviesList(dataFromApi);
+      });
+    }
   }, []);
 
+  console.log(moviesList);
   return (
     <>
       <header>
@@ -19,7 +23,7 @@ function App() {
       </header>
       <main>
         <Form />
-        <MovieList />
+        <MovieList movies={moviesList} />
       </main>
     </>
   );

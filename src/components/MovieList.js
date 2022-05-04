@@ -1,11 +1,17 @@
 import MovieSceneItem from "./MovieSceneItem";
 
-function MovieList() {
+function MovieList(props) {
+  const elements = props.movies.map((movie) => {
+    return (
+      <li key={movie.id}>
+        <MovieSceneItem movie={movie} />
+      </li>
+    );
+  });
+
   return (
     <section>
-      <ul>
-        <MovieSceneItem />
-      </ul>
+      <ul>{elements}</ul>
     </section>
   );
 }
