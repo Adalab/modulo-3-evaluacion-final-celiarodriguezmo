@@ -1,18 +1,22 @@
-import logo from "../images/logo.svg";
 import "../styles/App.scss";
+import Form from "./Form";
+import MovieList from "./MovieList";
+import getDataApi from "../services/fetch";
+import { useState } from "react";
 
 function App() {
-  return (
-    <div className='App'>
-      <img src={logo} className='App-logo' alt='logo' />
+  const [MoviesList, setMoviesList] = useState([]);
 
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
-        alias fuga odio odit atque expedita assumenda numquam quidem,
-        voluptatibus facere ullam eos quos iusto beatae sit perspiciatis dolore
-        laudantium minus.
-      </p>
-    </div>
+  return (
+    <>
+      <header>
+        <h1>Owen Wilson WOW!</h1>
+      </header>
+      <main>
+        <Form />
+        <MovieList />
+      </main>
+    </>
   );
 }
 
