@@ -3,6 +3,7 @@ import Form from "./Form";
 import MovieList from "./MovieList";
 import getDataApi from "../services/fetch";
 import { useEffect, useState } from "react";
+import Header from "./Header";
 
 function App() {
   const [moviesList, setMoviesList] = useState([]);
@@ -15,17 +16,14 @@ function App() {
     }
   }, []);
 
-  console.log(moviesList);
   return (
-    <>
-      <header>
-        <h1>Owen Wilson WOW!</h1>
-      </header>
+    <div>
+      <Header />
       <main>
         <Form />
         <MovieList movies={moviesList} />
       </main>
-    </>
+    </div>
   );
 }
 

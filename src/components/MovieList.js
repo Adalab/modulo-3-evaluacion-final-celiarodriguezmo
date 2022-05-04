@@ -1,9 +1,10 @@
 import MovieSceneItem from "./MovieSceneItem";
+import "../styles/list.scss";
 
 function MovieList(props) {
   const elements = props.movies.map((movie) => {
     return (
-      <li key={movie.id}>
+      <li className='list__element' key={movie.id}>
         <MovieSceneItem movie={movie} />
       </li>
     );
@@ -11,7 +12,7 @@ function MovieList(props) {
 
   return (
     <section>
-      <ul>{elements}</ul>
+      <ul className='list'>{elements}</ul>
     </section>
   );
 }
