@@ -1,11 +1,17 @@
 import { useState } from "react";
 import "../styles/form.scss";
-function Form(props) {
-  const [inputValue, setInputValue] = useState("");
 
+function Form(props) {
+  /*const [inputValue, setInputValue] = useState("");
+  const [inputYear, setInputYear] = useState("all");*/
   function handleInputName(ev) {
-    setInputValue(ev.target.value);
-    props.inputSearchMovie(inputValue);
+    //setInputValue(ev.target.value);
+
+    props.inputSearchMovie(ev.target.value);
+  }
+  function handleInputSelect(ev) {
+    //setInputYear(ev.target.value);
+    props.inputSearchYear(ev.target.value);
   }
   function handleForm(ev) {
     ev.preventDefault();
@@ -19,16 +25,21 @@ function Form(props) {
         className='form__input'
         type='text'
         name='inputName'
-        value={inputValue}
+        value={props.movieSearch}
         onChange={handleInputName}
       />
       <label className='form__label' htmlFor='inputSelectYear'>
         Year
       </label>
-      <select className='form__input' name='inputSelectYear' id=''>
-        <option value=''></option>
-        <option value=''></option>
-        <option value=''></option>
+      <select
+        className='form__input'
+        name='inputSelectYear'
+        id='inputSelectYear'
+        value={props.movieYear}
+        onChange={handleInputSelect}
+      >
+        <option value='all'>All Years</option>
+        <option value='2010'>2010</option>
       </select>
     </form>
   );

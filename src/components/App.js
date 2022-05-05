@@ -8,6 +8,7 @@ import Header from "./Header";
 function App() {
   const [moviesList, setMoviesList] = useState([]);
   const [movieSearch, setMovieSearch] = useState("");
+  const [movieYear, setMovieYear] = useState("");
 
   useEffect(() => {
     if (moviesList.length === 0) {
@@ -18,14 +19,25 @@ function App() {
   }, []);
   function inputSearchMovie(inputValue) {
     setMovieSearch(inputValue);
-    console.log(movieSearch);
+  }
+  function inputSearchYear(inputYear) {
+    setMovieYear(inputYear);
   }
   return (
     <div>
       <Header />
       <main>
-        <Form inputSearchMovie={inputSearchMovie} movieSearch={movieSearch} />
-        <MovieList movies={moviesList} />
+        <Form
+          inputSearchMovie={inputSearchMovie}
+          movieSearch={movieSearch}
+          inputSearchYear={inputSearchYear}
+          movieYear={movieYear}
+        />
+        <MovieList
+          movies={moviesList}
+          movieSearch={movieSearch}
+          movieYear={movieYear}
+        />
       </main>
     </div>
   );
