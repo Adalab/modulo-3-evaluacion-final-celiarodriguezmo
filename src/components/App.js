@@ -7,6 +7,7 @@ import Header from "./Header";
 
 function App() {
   const [moviesList, setMoviesList] = useState([]);
+  const [movieSearch, setMovieSearch] = useState("");
 
   useEffect(() => {
     if (moviesList.length === 0) {
@@ -15,12 +16,15 @@ function App() {
       });
     }
   }, []);
-
+  function inputSearchMovie(inputValue) {
+    setMovieSearch(inputValue);
+    console.log(movieSearch);
+  }
   return (
     <div>
       <Header />
       <main>
-        <Form />
+        <Form inputSearchMovie={inputSearchMovie} movieSearch={movieSearch} />
         <MovieList movies={moviesList} />
       </main>
     </div>
