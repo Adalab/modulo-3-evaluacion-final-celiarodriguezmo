@@ -8,7 +8,7 @@ import Header from "./Header";
 function App() {
   const [moviesList, setMoviesList] = useState([]);
   const [movieSearch, setMovieSearch] = useState("");
-  const [movieYear, setMovieYear] = useState("");
+  const [movieYearSearch, setMovieYearSearch] = useState("");
 
   useEffect(() => {
     if (moviesList.length === 0) {
@@ -21,18 +21,24 @@ function App() {
     setMovieSearch(inputValue);
   }
   function inputSearchYear(inputYear) {
-    setMovieYear(inputYear);
+    setMovieYearSearch(inputYear);
   }
 
   const filterYear = moviesList.filter((movie) => {
-    return movieYear === "" ? true : movie.year === parseInt(movieYear);
-
-    /* if (movieYear === "") {
-      return true;
-    } else {
-      return movie.year === parseInt(movieYear) ;
-    } */
+    return movieYearSearch === ""
+      ? true
+      : movie.year === parseInt(movieYearSearch);
   });
+
+  const getYears = () => {
+    const arrayYears = moviesList.map((movie) => movie.year);
+
+    const uniqueYears = new Set(arrayYears);
+
+    const years = [...uniqueYears];
+
+    return years;
+  };
 
   return (
     <div>
@@ -42,12 +48,13 @@ function App() {
           inputSearchMovie={inputSearchMovie}
           movieSearch={movieSearch}
           inputSearchYear={inputSearchYear}
-          movieYear={movieYear}
+          movieYear={movieYearSearch}
+          getYears={getYears()}
         />
         <MovieList
           movies={filterYear}
           movieSearch={movieSearch}
-          movieYear={movieYear}
+          movieYear={movieYearSearch}
         />
       </main>
     </div>
