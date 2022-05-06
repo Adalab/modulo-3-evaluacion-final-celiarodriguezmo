@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "../styles/form.scss";
 
 function Form(props) {
@@ -38,8 +37,8 @@ function Form(props) {
         value={props.movieYear}
         onChange={handleInputSelect}
       >
-        <option value='all'>All Years</option>
-        <option value='2010'>2010</option>
+        <option value=''>All Years</option>
+        <option value='2007'>2007</option>
       </select>
     </form>
   );

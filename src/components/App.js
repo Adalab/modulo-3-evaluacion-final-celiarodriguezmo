@@ -23,6 +23,17 @@ function App() {
   function inputSearchYear(inputYear) {
     setMovieYear(inputYear);
   }
+
+  const filterYear = moviesList.filter((movie) => {
+    return movieYear === "" ? true : movie.year === parseInt(movieYear);
+
+    /* if (movieYear === "") {
+      return true;
+    } else {
+      return movie.year === parseInt(movieYear) ;
+    } */
+  });
+
   return (
     <div>
       <Header />
@@ -34,7 +45,7 @@ function App() {
           movieYear={movieYear}
         />
         <MovieList
-          movies={moviesList}
+          movies={filterYear}
           movieSearch={movieSearch}
           movieYear={movieYear}
         />
