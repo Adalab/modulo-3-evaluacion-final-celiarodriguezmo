@@ -33,7 +33,7 @@ const clear = () => {
 // Este objeto tiene una propiedad set cuyo valor es la función set
 // Este objeto tiene una propiedad remove cuyo valor es la función remove
 // Este objeto tiene una propiedad clear cuyo valor es la función clear
-const objectToExport = {
+const objectLS = {
   get: get,
   set: set,
   remove: remove,
@@ -41,4 +41,4 @@ const objectToExport = {
 };
 
 // Exportamos el objeto para que pueda ser usado desde App
-export default objectToExport;
+export default objectLS;
