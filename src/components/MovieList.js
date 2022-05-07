@@ -2,8 +2,9 @@ import MovieSceneItem from "./MovieSceneItem";
 import "../styles/list.scss";
 
 function MovieList(props) {
-  const elements = props.movies
+  //Uso las props de app para filtrar y pintar los elementos del listado de peliculas
 
+  const elements = props.movies
     .filter((movie) =>
       movie.name
         .toLocaleLowerCase()

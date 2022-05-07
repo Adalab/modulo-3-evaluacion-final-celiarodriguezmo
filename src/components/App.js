@@ -20,6 +20,7 @@ function App() {
     objectLS.get("searchYear", "")
   );
 
+  //Uso useffect para pintar los datos de la api una sola vez,  ejecuto la promesa y almaceno los datos en local storage para luego
   useEffect(() => {
     if (moviesList.length === 0) {
       getDataApi().then((dataFromApi) => {
@@ -29,11 +30,13 @@ function App() {
     }
   }, []);
 
+  //filtro por nombre de la pelicula y almaceno en la variable de estado con los datos del lifting de la hija(inputName), subo este dato a local storage para luego
   function inputSearchMovie(inputValue) {
     objectLS.set("searchName", inputValue);
     setMovieSearch(inputValue);
   }
 
+  //filtro por años y almaceno en la variable de estado con los datos del lifting de la hija (inputYear), subo este dato a local storage para luego
   function inputSearchYear(inputYear) {
     objectLS.set("searchYear", inputYear);
     setMovieYearSearch(inputYear);
@@ -45,6 +48,8 @@ function App() {
       : movie.year === parseInt(movieYearSearch);
   });
 
+  // Obtenemos un array nuevo solo con los años que no se repiten del array de peliculas inicial para eso aplico el metodo set que me devuelve un objeto o conjunto de elementos unico (que convierto en array)
+
   const getYears = () => {
     const arrayYears = moviesList.map((movie) => movie.year);
     const uniqueYears = new Set(arrayYears);
@@ -52,10 +57,11 @@ function App() {
     return years;
   };
 
+  //Empleo pathname de  uselocation que me dice datos sobre la ruta en la que estoy situada
   const { pathname } = useLocation();
   const dataPath = matchPath("/detalle/:id", pathname);
 
-  //dataPath es el objeto que sacamos con el useLocation que nos da la infor de la ruta en la que hemos pinchado.
+  //dataPath es el objeto que sacamos que nos da la infor de la ruta en la que hemos pinchado.
 
   const sceneId = dataPath !== null ? dataPath.params.id : null;
 
@@ -66,8 +72,6 @@ function App() {
   );
 
   // con este find comparo de las películas iniciales cúal de ellas tiene el mismo id que el id que me da la ruta del datapath
-
-  const returnListSearch = () => {};
 
   return (
     <Routes>
