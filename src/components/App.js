@@ -13,8 +13,12 @@ import objectLS from "../services/localStorage";
 
 function App() {
   const [moviesList, setMoviesList] = useState(objectLS.get("moviesList", []));
-  const [movieSearch, setMovieSearch] = useState("");
-  const [movieYearSearch, setMovieYearSearch] = useState("");
+  const [movieSearch, setMovieSearch] = useState(
+    objectLS.get("searchName", "")
+  );
+  const [movieYearSearch, setMovieYearSearch] = useState(
+    objectLS.get("searchYear", "")
+  );
 
   useEffect(() => {
     if (moviesList.length === 0) {
