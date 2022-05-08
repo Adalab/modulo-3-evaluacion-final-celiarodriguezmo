@@ -1,0 +1,37 @@
+.containerDetail{
+width: 100vh;
+background-color: rgba(0, 17, 255, 0.349);
+border-radius: 20px;
+padding: 40px;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+}
+
+.containter-elementsDetail{
+  display: flex;
+  flex-direction: column;
+}
+
+.detail__img{
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+.detail__title{
+  text-align: left;
+  font-size: 2rem;
+  font-weight: bold;
+  }
+  
+.detail__sentence{
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight:lighter;
+ 
+  text-align: center;
+  color: white;
+  }
+  .detail__text{
+    font-size: 0.75rem;
+  }

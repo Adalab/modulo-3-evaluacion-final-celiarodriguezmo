@@ -3,6 +3,7 @@ import wow from "../images/wow-image.png";
 import { Link } from "react-router-dom";
 //uso las props de app para sacar los valores de los elementos que tiene cada pelicula del listado
 // uso Link to e interpolo la ruta para que me lleve al detalle de cada escena
+
 function MovieSceneItem(props) {
   return (
     <Link to={`/detalle/${props.movie.id}`} target='_blank'>

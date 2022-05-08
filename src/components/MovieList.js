@@ -1,5 +1,6 @@
 import MovieSceneItem from "./MovieSceneItem";
 import "../styles/list.scss";
+//import handleError from "../components/handleError";
 
 function MovieList(props) {
   //Uso las props de app para filtrar y pintar los elementos del listado de peliculas
