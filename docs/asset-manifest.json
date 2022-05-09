@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "./static/css/main.29a56ed6.css",
-    "main.js": "./static/js/main.128b890b.js",
+    "main.js": "./static/js/main.f35e434d.js",
     "static/media/wow-image.png": "./static/media/wow-image.650e60337df7601ac9ca.png",
     "static/media/Owen.png": "./static/media/Owen.3b55998c204f27064b30.png",
     "index.html": "./index.html",
     "main.29a56ed6.css.map": "./static/css/main.29a56ed6.css.map",
-    "main.128b890b.js.map": "./static/js/main.128b890b.js.map"
+    "main.f35e434d.js.map": "./static/js/main.f35e434d.js.map"
   },
   "entrypoints": [
     "static/css/main.29a56ed6.css",
-    "static/js/main.128b890b.js"
+    "static/js/main.f35e434d.js"
   ]
 }
