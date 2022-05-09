@@ -6,6 +6,8 @@ function MovieList(props) {
   //Uso las props de app para filtrar y pintar los elementos del listado de peliculas
 
   const elements = props.movies
+    .filter((movie) => movie.wowPosition === props.valueWow)
+
     .filter((movie) =>
       movie.name
         .toLocaleLowerCase()

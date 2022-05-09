@@ -28,6 +28,9 @@ function Form(props) {
     });
     return options;
   };
+  function handleInputWow(ev) {
+    props.setValueWow(ev.target.value);
+  }
 
   return (
     <form className='form' onSubmit={handleForm}>
@@ -54,6 +57,13 @@ function Form(props) {
         <option value=''>Todos</option>
         {selectOptions()}
       </select>
+      <label htmlFor='inputWow'>Filtro Wow</label>
+      <input
+        name='inputWow'
+        type='number'
+        value={props.valueWow}
+        onChange={handleInputWow}
+      />
     </form>
   );
 }

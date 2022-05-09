@@ -13,6 +13,8 @@ function getDataApi() {
           name: movie.movie,
           image: movie.poster,
           year: movie.year,
+          wowNumberMovie: movie.total_wows_in_movie,
+          wowPosition: movie.current_wow_in_movie,
         };
       });
       return dataApiClean;

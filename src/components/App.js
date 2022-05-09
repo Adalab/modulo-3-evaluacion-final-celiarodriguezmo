@@ -20,7 +20,7 @@ function App() {
   const [movieYearSearch, setMovieYearSearch] = useState(
     objectLS.get("searchYear", "")
   );
-
+  const [valueWow, setValueWow] = useState(0);
   //Uso useffect para pintar los datos de la api una sola vez,  ejecuto la promesa y almaceno los datos en local storage para luego
   useEffect(() => {
     if (moviesList.length === 0) {
@@ -88,11 +88,14 @@ function App() {
                 inputSearchYear={inputSearchYear}
                 movieYear={movieYearSearch}
                 getYears={getYears()}
+                valueWow={valueWow}
+                setValueWow={setValueWow}
               />
               <MovieList
                 movies={filterYear}
                 movieSearch={movieSearch}
                 movieYear={movieYearSearch}
+                valueWow={parseInt(valueWow)}
               />
             </main>
           </div>
